@@ -1,0 +1,13 @@
+li {
+  list-style: none;
+  font-size: 50px;
+  display: inline-flex;
+  vertical-align: bottom;
+  letter-spacing: 60px;
+  transition: 200ms;
+}
+
+li:hover {
+  cursor: pointer;
+  transform: scale(1.2)
+}
