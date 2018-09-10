@@ -1,13 +1,24 @@
-li {
+.clicked:hover {
+  cursor: pointer;
+  transform: scale(1.5)
+}
+
+.clicked {
+
   list-style: none;
   font-size: 50px;
   display: inline-flex;
   vertical-align: bottom;
-  letter-spacing: 60px;
+  margin: 15px;
   transition: 200ms;
 }
 
-li:hover {
-  cursor: pointer;
-  transform: scale(1.2)
+.unclicked {
+  list-style: none;
+  font-size: 50px;
+  display: inline-flex;
+  vertical-align: bottom;
+  margin: 15px;
+  transition: 200ms;
+  opacity: 0.2;
 }

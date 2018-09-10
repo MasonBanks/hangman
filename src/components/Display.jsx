@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function Display({ currentWord, attempts }) {
+export default function Display({ currentWord, attempts, lives }) {
   return (
     <div>
-      <h1>{currentWord.split('').map(letter => {
+      <h2>{currentWord.split('').map(letter => {
         if (attempts.includes(letter)) {
-          return letter
+          return `${letter} `
         }
         return '_ '
-      })}</h1>
+      })}</h2>
     </div>
   )
 }

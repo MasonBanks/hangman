@@ -4,7 +4,7 @@ import Button from './components/Button';
 import Alphabet from './components/Alphabet';
 import Display from './components/Display';
 import Score from './components/Score'
-import words from './data/words.js';
+import words from 'an-array-of-english-words';
 
 class App extends Component {
   state = {
@@ -19,8 +19,8 @@ class App extends Component {
         <h1>Hangman</h1>
         <Button getWord={this.getWord} />
         <Score lives={this.state.lives} />
-        <Display currentWord={this.state.currentWord} attempts={this.state.attempts} />
-        <Alphabet alphabet={this.state.alphabet} playersTurn={this.playersTurn} />
+        <Display currentWord={this.state.currentWord} attempts={this.state.attempts} lives={this.state.lives} />
+        <Alphabet alphabet={this.state.alphabet} playersTurn={this.playersTurn} attempts={this.state.attempts} />
       </div>
     );
   }
@@ -31,15 +31,21 @@ class App extends Component {
       currentWord: word,
       lives: 6
     })
+    // console.log(word)
   }
   playerLives = () => {
     this.setState({
       lives: this.state.lives - 1
+    }, () => {
+      if (this.state.lives < 0) {
+        this.setState({
+          attempts: this.state.currentWord.split('')
+        }, () => {
+          alert("Better luck next time!")
+          // this.getWord()
+        })
+      }
     })
-    if (this.state.lives < 1) {
-      alert("game over sucka")
-      this.getWord()
-    }
   }
   playersTurn = (value) => {
     value = value.toLowerCase()
@@ -49,8 +55,11 @@ class App extends Component {
     if (!this.state.currentWord.split('').includes(value)) {
       this.playerLives()
     }
+    this.didYouWin()
   }
+  didYouWin = () => {
 
+  }
 }
 
 export default App;

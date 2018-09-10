@@ -1,3 +1,10 @@
 .App {
   text-align: center;
+  font-family: Chalkduster;
+  font-size: 150%;
+}
+
+@font-face{
+  font-family: chalkduster;
+  src: url('./extras/Chalkduster.ttf')
 }
