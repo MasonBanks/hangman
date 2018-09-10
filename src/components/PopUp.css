@@ -1,0 +1,24 @@
+.hidden {
+  display: none;
+}
+
+.not-hidden {
+  font-size: 30px;
+  animation: fontbulger 0.5s infinite;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  color: rgb(67, 206, 67);
+}
+
+@keyframes fontbulger {
+  0%,
+  100% {
+    font-size: 35px;
+  }
+  50% {
+    font-size: 36px;
+  }
+}
